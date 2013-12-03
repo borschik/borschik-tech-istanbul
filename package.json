@@ -1,0 +1,28 @@
+{
+  "name": "borschik-tech-istanbul",
+  "version": "0.0.0",
+  "description": "borschik tech that instruments included files using istanbul code coverage tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arikon/borschik-tech-istanbul.git"
+  },
+  "keywords": [
+    "borschik",
+    "tech",
+    "istanbul",
+    "coverage"
+  ],
+  "author": "Sergey Belov <peimei@ya.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arikon/borschik-tech-istanbul/issues"
+  },
+  "homepage": "https://github.com/arikon/borschik-tech-istanbul",
+  "dependencies": {
+    "istanbul": "~0.1.46"
+  }
+}
