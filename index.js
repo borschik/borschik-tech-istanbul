@@ -1,13 +1,16 @@
-var path = require('path'),
+var fs = require('fs'),
+    path = require('path'),
     Instrumenter = require('istanbul').Instrumenter,
-    instrumenter = new Instrumenter(),
+    instrumenter = new Instrumenter({preserveComments: true}),
     cwd = process.cwd();
 
 module.exports = function(borschik) {
     var base = borschik.getTech('js'),
         File = base.File.inherit({
-            processInclude: function(baseFile) {
-                return instrumenter.instrumentSync(this.__base(baseFile), path.relative(cwd, this.path));
+            read: function() {
+                var content = fs.readFileSync(this.processPath(this.path), 'utf8'),
+                    instrumented = instrumenter.instrumentSync(content, path.relative(cwd, this.path));
+                this.content = this.parse(instrumented);
             }
         }),
         Tech = base.Tech.inherit({

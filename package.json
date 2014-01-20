@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/arikon/borschik-tech-istanbul",
   "dependencies": {
-    "istanbul": "~0.1.46"
+    "istanbul": "~0.2.3"
   }
 }
