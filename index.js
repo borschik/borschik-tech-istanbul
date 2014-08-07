@@ -8,7 +8,7 @@ module.exports = function(borschik) {
     var base = borschik.getTech('js'),
         File = base.File.inherit({
             read: function() {
-                var ip = this.tech.opts.techOptions.instrumentPaths;
+                var ip = (this.tech.opts.techOptions || {}).instrumentPaths;
                 // Validate every include path if instrumentPaths option is specified
                 if (ip) {
                     var instrument = false;
