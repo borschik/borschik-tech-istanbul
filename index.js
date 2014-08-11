@@ -43,6 +43,12 @@ module.exports = function(borschik) {
             __constructor: function(opts) {
                 this.__base(opts);
                 this._instrumentPaths = (opts.techOptions || {}).instrumentPaths;
+
+                if (this._instrumentPaths) {
+                    this._instrumentPaths = this._instrumentPaths.map(function(p) {
+                        return path.resolve(process.cwd(), p);
+                    });
+                }
             },
 
             File: File

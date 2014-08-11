@@ -22,10 +22,11 @@ which should not. If this option is not specified then all includes will be inst
 pass an array of strings there - base paths for the includes to instrument. For example:
 
 ```
-node_modules/.bin/borschik --tech istanbul --input your.js --output your.min.js --techOptions "{instrumentPaths: ['/home/me/project/js']}"
+node_modules/.bin/borschik --tech istanbul --input your.js --output your.min.js --techOptions "{instrumentPaths: ['./js']}"
 ```
-In this case the include files within `/home/me/project/js` folder tree will be instrumented.
-Any other file will not.
+In this case the include files within `./js` folder tree will be instrumented.
+Any other file will not. The relative paths resolve relative to the currrent
+working directory. The absolute paths are allowed too.
 
 
 License
