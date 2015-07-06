@@ -8,12 +8,13 @@ module.exports = function(borschik) {
     var base = borschik.getTech('js'),
         File = base.File.inherit({
             read: function() {
-                if (!this._shouldInstrument()) { 
+                if (!this._shouldInstrument()) {
                     return this.__base();
                 }
 
                 var content = fs.readFileSync(this.processPath(this.path), 'utf8'),
-                    instrumented = instrumenter.instrumentSync(content, path.relative(cwd, this.path));
+                    instrumented = instrumenter.instrumentSync(content, path.relative(this.tech._root, this.path));
+
                 this.content = this.parse(instrumented);
             },
 
@@ -41,12 +42,15 @@ module.exports = function(borschik) {
         }),
         Tech = base.Tech.inherit({
             __constructor: function(opts) {
+                var options = (opts.techOptions || {});
+
                 this.__base(opts);
-                this._instrumentPaths = (opts.techOptions || {}).instrumentPaths;
+                this._instrumentPaths = options.instrumentPaths;
+                this._root = options.root || cwd;
 
                 if (this._instrumentPaths) {
                     this._instrumentPaths = this._instrumentPaths.map(function(p) {
-                        return path.resolve(process.cwd(), p);
+                        return path.resolve(this._root, p);
                     });
                 }
             },
