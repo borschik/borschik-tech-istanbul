@@ -1,7 +1,7 @@
 borschik-tech-istanbul
 ======================
 
-Tech module for [borschik](http://github.com/bem/borschik) that instruments js files on include
+Tech module for [borschik](http://github.com/borschik/borschik) that instruments js files on include
 using [istanbul](https://github.com/gotwarlost/istanbul).
 
 Usage
@@ -14,7 +14,7 @@ First you should install `borschik` and this module into your project and save i
 Then you could run `borschik`
 
     node_modules/.bin/borschik --tech istanbul --input your.js --output your.min.js
-    
+
 **Options**
 
 You can specify the `instrumentPaths` option to control which includes should be instrumented and

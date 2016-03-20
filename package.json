@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/arikon/borschik-tech-istanbul.git"
+    "url": "git://github.com/borschik/borschik-tech-istanbul.git"
   },
   "keywords": [
     "borschik",
@@ -19,9 +19,9 @@
   "author": "Sergey Belov <peimei@ya.ru>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arikon/borschik-tech-istanbul/issues"
+    "url": "https://github.com/borschik/borschik-tech-istanbul/issues"
   },
-  "homepage": "https://github.com/arikon/borschik-tech-istanbul",
+  "homepage": "https://github.com/borschik/borschik-tech-istanbul",
   "dependencies": {
     "istanbul": "~0.2.3"
   }
