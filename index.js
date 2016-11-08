@@ -51,7 +51,7 @@ module.exports = function(borschik) {
                 if (this._instrumentPaths) {
                     this._instrumentPaths = this._instrumentPaths.map(function(p) {
                         return path.resolve(this._root, p);
-                    });
+                    }, this);
                 }
             },
 
